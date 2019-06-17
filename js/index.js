@@ -39,10 +39,45 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
-//Updating the img src for the header img
+// Page Images
 let headerImg = document.getElementById("cta-img");
-headerImg.src = "img/header-img.png";
+headerImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
+let middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+// Navigation 
+
+let navLink = document.querySelectorAll("nav a");
+
+navLink.forEach((item, i) => {
+  item.textContent = siteContent["nav"][`nav-item-${i+1}`];
+});
+
+// Header 
+
+let ctaText = document.querySelector("h1");
+ctaText.textContent = siteContent["cta"]["h1"];
+// ctaText.fontSize = ;  << what to use here to fix line breaking issue
+
+let ctaButton = document.querySelector("button");
+ctaButton.textContent = siteContent["cta"]["button"];
+
+// Section 1 
+
+let sectionTitles = document.querySelectorAll("h4");
+
+
+sectionTitles.forEach((item, i) => {
+  if (i = 0) {
+    item.textContent = siteContent["main-content"]["features-h4"];
+  };
+  
+  if (i = 1) {
+    item.textContent = siteContent["main-content"]["about-h4"];
+  };
+
+})
 
