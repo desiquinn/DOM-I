@@ -54,6 +54,7 @@ let navLink = document.querySelectorAll("nav a");
 
 navLink.forEach((item, i) => {
   item.textContent = siteContent["nav"][`nav-item-${i+1}`];
+  item.style.color = "green";
 });
 
 // Header 
@@ -69,15 +70,38 @@ ctaButton.textContent = siteContent["cta"]["button"];
 
 let sectionTitles = document.querySelectorAll("h4");
 
-
-sectionTitles.forEach((item, i) => {
-  if (i = 0) {
-    item.textContent = siteContent["main-content"]["features-h4"];
-  };
+// sectionTitles.forEach((item, i) => {
+//   if (item[i = 0]) {
+//     item.textContent = siteContent["main-content"]["features-h4"];
+//   };
   
-  if (i = 1) {
-    item.textContent = siteContent["main-content"]["about-h4"];
-  };
+//   if (item[i = 1]) {
+//     item.textContent = siteContent["main-content"]["about-h4"];
+//   };
 
-})
+// })
 
+sectionTitles[0].textContent = siteContent["main-content"]["features-h4"];
+sectionTitles[1].textContent = siteContent["main-content"]["about-h4"];
+sectionTitles[2].textContent = siteContent["main-content"]["services-h4"];
+sectionTitles[3].textContent = siteContent["main-content"]["product-h4"];
+sectionTitles[4].textContent = siteContent["main-content"]["vision-h4"];
+sectionTitles[5].textContent = siteContent["contact"]["contact-h4"];
+
+let sectionContent = document.querySelectorAll(".text-content p");
+
+sectionContent[0].textContent = siteContent["main-content"]["features-content"];
+sectionContent[1].textContent = siteContent["main-content"]["about-content"];
+sectionContent[2].textContent = siteContent["main-content"]["services-content"];
+sectionContent[3].textContent = siteContent["main-content"]["product-content"];
+sectionContent[4].textContent = siteContent["main-content"]["vision-content"];
+
+let contactContent = document.querySelectorAll(".contact p");
+
+contactContent[0].textContent = siteContent["contact"]["address"];
+contactContent[1].textContent = siteContent["contact"]["phone"];
+contactContent[2].textContent = siteContent["contact"]["email"];
+
+let footerContent = document.querySelector("footer p");
+
+footerContent.textContent = siteContent["footer"]["copyright"];
