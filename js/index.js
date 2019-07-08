@@ -39,4 +39,69 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+// Page Images
+let headerImg = document.getElementById("cta-img");
+headerImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+let middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+// Navigation 
+
+let navLink = document.querySelectorAll("nav a");
+
+navLink.forEach((item, i) => {
+  item.textContent = siteContent["nav"][`nav-item-${i+1}`];
+  item.style.color = "green";
+});
+
+// Header 
+
+let ctaText = document.querySelector("h1");
+ctaText.textContent = siteContent["cta"]["h1"];
+// ctaText.fontSize = ;  << what to use here to fix line breaking issue
+
+let ctaButton = document.querySelector("button");
+ctaButton.textContent = siteContent["cta"]["button"];
+
+// Section 1 
+
+let sectionTitles = document.querySelectorAll("h4");
+
+// sectionTitles.forEach((item, i) => {
+//   if (item[i = 0]) {
+//     item.textContent = siteContent["main-content"]["features-h4"];
+//   };
+  
+//   if (item[i = 1]) {
+//     item.textContent = siteContent["main-content"]["about-h4"];
+//   };
+
+// })
+
+sectionTitles[0].textContent = siteContent["main-content"]["features-h4"];
+sectionTitles[1].textContent = siteContent["main-content"]["about-h4"];
+sectionTitles[2].textContent = siteContent["main-content"]["services-h4"];
+sectionTitles[3].textContent = siteContent["main-content"]["product-h4"];
+sectionTitles[4].textContent = siteContent["main-content"]["vision-h4"];
+sectionTitles[5].textContent = siteContent["contact"]["contact-h4"];
+
+let sectionContent = document.querySelectorAll(".text-content p");
+
+sectionContent[0].textContent = siteContent["main-content"]["features-content"];
+sectionContent[1].textContent = siteContent["main-content"]["about-content"];
+sectionContent[2].textContent = siteContent["main-content"]["services-content"];
+sectionContent[3].textContent = siteContent["main-content"]["product-content"];
+sectionContent[4].textContent = siteContent["main-content"]["vision-content"];
+
+let contactContent = document.querySelectorAll(".contact p");
+
+contactContent[0].textContent = siteContent["contact"]["address"];
+contactContent[1].textContent = siteContent["contact"]["phone"];
+contactContent[2].textContent = siteContent["contact"]["email"];
+
+let footerContent = document.querySelector("footer p");
+
+footerContent.textContent = siteContent["footer"]["copyright"];
